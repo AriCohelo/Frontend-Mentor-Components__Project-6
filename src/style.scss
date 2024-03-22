@@ -1,0 +1,67 @@
+@import 'variables.scss';
+@import 'mixins.scss';
+@import 'resets.scss';
+
+body {
+	font-family: $font-family-Primary;
+	font-weight: $fontWeightRegular;
+	color: $clr-DarkGrayishBlue;
+	font-size: 0.875rem;
+	background-color: $clr-Cream;
+	display: grid;
+	place-content: center;
+	min-height: 100vh;
+	margin: 1rem;
+}
+.product {
+	$contentPadding: 1.5rem;
+	$contentSpacing: 1rem;
+	background-color: $clr-White;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	max-width: 600px;
+	&__content {
+		padding: $contentPadding;
+		display: grid;
+		gap: $contentSpacing;
+	}
+	&__category {
+		font-size: 0.8125rem;
+		text-transform: uppercase;
+		letter-spacing: 5px;
+	}
+	&__name {
+		font-family: $font-family-Accent;
+		font-size: 2rem;
+		color: $clr-VeryDarkBlue;
+		font-weight: $fontWeightBold;
+		line-height: 1;
+	}
+	&__price-new {
+		font-size: 2rem;
+		font-family: $font-family-Accent;
+		font-weight: $fontWeightBold;
+		color: $clr-DarkCyan;
+	}
+	&__button {
+		@include flexer();
+		gap: 1rem;
+		cursor: pointer;
+		border: 0;
+		background-color: $clr-DarkCyan;
+		color: $clr-White;
+		padding: 1rem;
+		border-radius: 0.5rem;
+	}
+}
+.flex-price {
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+}
+@media (min-width: 600px) {
+	.product {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+}
